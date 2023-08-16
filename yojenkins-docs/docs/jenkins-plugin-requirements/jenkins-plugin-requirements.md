@@ -1,8 +1,15 @@
+---
+title: Jenkins Plugin Requirements
+metaTitle: Jenkins Plugin Requirements
+metaDescription: Jenkins Plugin Requirements
+sidebar_position: 4
+---
+
 # Jenkins Plugin Requirements
 
 If you are using `yojenkins` on a pre-existing Jenkins server, make sure that the
 following Jenkins plugin are installed for `yojenkins` to use all its functionalities.
-However, *these plugins tend to be installed by default.*
+However, _these plugins tend to be installed by default._
 
 1. [Folders](https://plugins.jenkins.io/cloudbees-folder/) (cloudbees-folder)
 2. [Next Build Number](https://plugins.jenkins.io/next-build-number/) (next-build-number)
@@ -13,5 +20,5 @@ However, *these plugins tend to be installed by default.*
 In order to check if a Jenkins plugin is installed, or to install a plugin, you can:
 
 - In the Jenkins web user interface, go to
-    - **Manage Jenkins > Manage Plugins > Installed OR Available**
+  - **Manage Jenkins > Manage Plugins > Installed OR Available**
 - `yojenkins server plugins --pretty --list`

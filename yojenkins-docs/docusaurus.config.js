@@ -43,15 +43,17 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/ismet55555/yojenkins/tree/main/yojenkins-docs/",
+          routeBasePath: "/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+        // },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -73,55 +75,84 @@ const config = {
         },
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            // type: "docSidebar",
+            // sidebarId: "tutorialSidebar",
+            to: "/",
             position: "left",
-            label: "Tutorial",
+            label: "Documentation",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {
+            to: "/updates/release-notes",
+            label: "Release Notes",
+            position: "left",
+          },
           {
             href: "https://github.com/ismet55555/yojenkins",
             label: "GitHub",
+            position: "right",
+          },
+          {
+            type: "dropdown",
+            items: [
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/ismet-handzic-phd-b6b00033/",
+              },
+            ],
+            label: "Community",
             position: "right",
           },
         ],
       },
       footer: {
         style: "dark",
+        logo: {
+          src: "img/yojenkins_logo.png",
+          alt: "yojenkins logo",
+          href: "https://yojenkins.com",
+          width: 130,
+          height: 66,
+        },
         links: [
           {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Documentation",
+                type: "doc",
                 to: "/docs/intro",
+              },
+              {
+                label: "Release Notes",
+                type: "doc",
+                to: "updates/release-notes",
               },
             ],
           },
           {
             title: "Community",
             items: [
+              // {
+              //   label: "Github",
+              //   href: "https://github.com/ismet55555/yojenkins",
+              // },
               {
-                label: "Stack Overflow",
-                href: "https://github.com/ismet55555/yojenkins",
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/ismet-handzic-phd-b6b00033/",
               },
-              {
-                label: "Discord",
-                href: "https://github.com/ismet55555/yojenkins",
-              },
-              {
-                label: "Twitter",
-                href: "https://github.com/ismet55555/yojenkins",
-              },
+              // {
+              //   label: "Discord",
+              //   href: "https://github.com/ismet55555/yojenkins",
+              // },
+              // {
+              //   label: "Twitter",
+              //   href: "https://github.com/ismet55555/yojenkins",
+              // },
             ],
           },
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/ismet55555/yojenkins",
