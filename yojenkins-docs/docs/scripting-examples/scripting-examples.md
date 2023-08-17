@@ -192,10 +192,11 @@ success
 The following `bash` script uses `yojenkins` to search all jobs on two different Jenkins server.
 If it is found, delete it.
 
-!!! note
+:::note
 This example assumes that you have two different profiles listed in your
 `~/.yojenkins/credentials` file with two different Jenkins servers for each profile.
 We are going to assume the profile names are `jenkins-1` and `jenkins-2`.
+:::
 
 **Code**
 

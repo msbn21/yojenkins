@@ -47,9 +47,10 @@ sidebar_position: 3
    - Example: `yojenkins-0.0.00-linux-x86_64`, for Linux OS 64-bit Architecture
 3. Move the binary to the a place where you can access it from the command line (ie. on `PATH`)
 
-!!! note "Note"
+:::note "Note"
 Not all operating systems and architectures are supported.
 As of now, only select and/or popular ones are.
+:::
 
 ## System Dependencies For Sound
 

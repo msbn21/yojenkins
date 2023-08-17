@@ -29,8 +29,9 @@ For example, `yojenkins folder info [OPTIONS] FOLDER`, where folder name/URL are
 To look up any command and sub-command help documentation, supplement the command with `--help`.
 For example, `yojenkins auth configure --help`
 
-!!! tip
+:::tip
 To troubleshoot any issues or to see what `yojenkins` is doing behind the scenes, use the `--debug` option
+:::
 
 ## Menu Overview
 
@@ -102,8 +103,9 @@ In turn, the sub-menu commands can be accessed by entering `yojenkins server` fo
 sub-menu command name. For example, `yojenkins server browser` will open the Jenkins server
 home page in the browser.
 
-!!! note
+:::note
 Some commands may be greyed out. These commands are not yet implemented.
+:::
 
 Of course you can view the help menu for the sub-menu's commands by adding `--help`.
 For example, `yojenkins server browser --help` will display the help menu for the `browser`
@@ -143,9 +145,10 @@ Authentication profiles are stored in your local `~/.yojenkins` directory inside
 file. The `credentials` file is a TOML file that contains a list of authentication profiles.
 Remember that the `~` is a shorthand for the user's home directory.
 
-!!! note
+:::note
 Authentication profiles work very similar to that of AWS CLI, storing credentials locally inside
 the `~/.aws/credentials` file.
+:::
 
 The `~/.yojenkins` directory and the `credentials` file can be manually created, however, `yojenkins`
 will create these files for you if they do not exist.
@@ -180,9 +183,10 @@ The profile sections are as follows:
 - `active`: Whether the profile can be used or not. This can be useful if you want to temporarily disable
   a profile and ensure that you don't accidentally use it.
 
-!!! caution
+:::caution
 The `api_token` can be the account password, however it is **highly recommended** that you use
 an API token. You do not want to store a Jenkins account password in plain text.
+:::
 
 ### Configuring a Profile
 
@@ -212,9 +216,10 @@ Successfully configured credentials file
 
 You can leave the API token blank since you can use `yojenkins` to add the API token later.
 
-!!! caution
+:::caution
 The profile name is optional because if you do not enter anything for this item, the profile
 will be named `default` and overwrite any existing `default` profile with the same name.
+:::
 
 #### Manually edit the `~/.yojenkins/credentials` file directly
 
@@ -336,7 +341,7 @@ Enter "admin" PASSWORD:
 success
 ```
 
-!!! tip
+:::tip
 You can also manually fetch the API token from the Jenkins UI:
 
     1. Click on your username in the top right corner of the Jenkins UI
@@ -344,6 +349,8 @@ You can also manually fetch the API token from the Jenkins UI:
     3. In the *"API Token"* section, click *"Add new Token"*
     3. Copy the generated API token and paste it into the `api_token` field
     in the `~/.yojenkins/credentials` file
+
+:::
 
 ### Order of Precedence Specifying Profiles
 
@@ -582,9 +589,10 @@ You can specify the Groovy script by using one of the following options:
    - The Groovy script is specified as a file path.
    - _Example:_ `yojenkins tools run-script --file /path/to/script.groovy`
 
-!!! attention
+:::attention
 In order to run a Groovy script, you must have the appropriate permissions on the Jenkins server
 for the user account you are using.
+:::
 
 ### Setup Jenkins Shared Library
 
@@ -594,10 +602,11 @@ code used to report test results may be used in more than one pipeline without c
 it into each pipeline. [Shared libraries](https://www.jenkins.io/doc/book/pipeline/shared-libraries/)
 are a way to share code between projects and pipelines.
 
-!!! danger
+:::danger
 Jenkins sharable libraries available to any Pipeline jobs running on this system. These libraries will
 be fully trusted, meaning they run code without “sandbox” restrictions and may use @Grab.
 So be careful what code is being added to a Jenkins shared library.
+:::
 
 `yojenkins` provides a command to setup a shared library using the following command:
 
@@ -616,13 +625,15 @@ _As of now, the only git repository that is supported by `yojenkins` is GitHub._
 `yojenkins` offers an easy way to quickly set up a local Jenkins server within a Docker container.
 This containerized server is set up and ready to go to use to test `yojenkins`.
 
-!!! warning "Warning"
+:::warning "Warning"
 The locally containerized server set up using `server-deploy` is for development, training,
 demonstration, or testing purposes only. **Do not use this server for any production environments.**
+:::
 
-!!! note "Note"
+:::note "Note"
 For the locally containerized server to work, you must have Docker installed and running.
 See [Docker installation guide](docker_install.md) on how to install Docker.
+:::
 
 ### Deploying the Local Jenkins Server
 
