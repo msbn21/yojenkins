@@ -1,3 +1,10 @@
+---
+title: "CLI Outline"
+metaTitle: "CLI Outline"
+metaDescription: "CLI Outline"
+sidebar_position: 1
+---
+
 # CLI Command Outline
 
 Below is a complete outline of the `yojenkins` CLI command structure.

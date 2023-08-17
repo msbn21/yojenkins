@@ -1,11 +1,19 @@
+---
+title: "Contribute to This Project!"
+metaTitle: "Contribute to This Project!"
+metaDescription: "Contribute to This Project!"
+sidebar_position: 1
+---
+
 # Contribute to This Project
 
 `yojenkins` is a Python project that is an on-going effort, slowly adding various features and improvements.
 If you would like to contribute, please fork the project, make your changes,
 and submit a pull request.
 
-!!! tip "Big Thank You"
-    **Any help, ideas, or user testing is much appreciated!**
+:::tip "Big Thank You"
+**Any help, ideas, or user testing is much appreciated!**
+:::
 
 There is definitely work to be done. If you spot an issue you are able to fix,
 or if you are eying a open issue or feature request, feel free to submit some code.
@@ -13,14 +21,17 @@ or if you are eying a open issue or feature request, feel free to submit some co
 For guides and information on how to get started and help out, check out the various
 sections on this page.
 
-[TOC]
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
 
 ---
 
 ## Roadmap
 
-!!! note
-    The roadmap is currently in flux and is yet to be refined
+:::note
+The roadmap is currently in flux and is yet to be refined
+:::
 
 Please see the `TODO` and `FIXME` kanban board for this projects on GitHub
 
@@ -36,8 +47,6 @@ Here is a guide by GitHub on how to fork and clone a project:
 
 - [Fork and Clone a GitHub Repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
-
-
 ## Environment Setup
 
 The following steps assume that you have successfully cloned the project and are in the
@@ -45,69 +54,64 @@ root directory of the project.
 
 1. Add the system dependencies, if applicable
 
-    | Platform          | Command                                                                        |
-    | ----------------- | ------------------------------------------------------------------------------ |
-    | MacOS and Windows | Not needed                                                                     |
-    | Ubuntu            | `sudo apt update && apt-get install -y python3-dev python3-pip libasound2-dev` |
-    | CentOS            | `sudo yum update && yum install -y python3-devel gcc alsa-lib-devel`           |
+   | Platform          | Command                                                                        |
+   | ----------------- | ------------------------------------------------------------------------------ |
+   | MacOS and Windows | Not needed                                                                     |
+   | Ubuntu            | `sudo apt update && apt-get install -y python3-dev python3-pip libasound2-dev` |
+   | CentOS            | `sudo yum update && yum install -y python3-devel gcc alsa-lib-devel`           |
 
-2.  Ensure Python is installed and is a compatible version for this project
-    - `python --version`
-    - If it is not, install it: [Guide](https://realpython.com/installing-python/)
-3.  Ensure that `pip` is installed
-    - `pip --version`
-    - If it is not, install it: [Guide](https://pip.pypa.io/en/stable/installation/)
-4.  Upgrade tooling and install `pipenv`
-    - `python -m pip install --upgrade pip setuptools wheel virtualenv pipenv`
+2. Ensure Python is installed and is a compatible version for this project
+   - `python --version`
+   - If it is not, install it: [Guide](https://realpython.com/installing-python/)
+3. Ensure that `pip` is installed
+   - `pip --version`
+   - If it is not, install it: [Guide](https://pip.pypa.io/en/stable/installation/)
+4. Upgrade tooling and install `pipenv`
+   - `python -m pip install --upgrade pip setuptools wheel virtualenv pipenv`
 5. With `pipenv`, set up the development virtual environment
-    - `pipenv sync --three --dev`
+   - `pipenv sync --three --dev`
 6. Get into (activate) the virtual environment
-    - `pipenv shell`
+   - `pipenv shell`
 7. Test if `yojenkins` starts up without any errors
-    - `yojenkins --help`
-
-
+   - `yojenkins --help`
 
 ## Making Changes
 
-!!! tip "`git`"
-    This project uses the ["trunk-based"](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
-    `git` version control workflow. Each time you make a change, you should create a new branch
-    and push your changes to the `main` branch.
+:::tip "`git`"
+This project uses the ["trunk-based"](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
+`git` version control workflow. Each time you make a change, you should create a new branch
+and push your changes to the `main` branch.
 
-    These days you do not have to be a `git` terminal master in order to get going with a `git`
-    source controlled project. Depending on your preferences, there are many visual UI-based `git`
-    clients such as [GitHub Desktop](https://desktop.github.com/),
-    [SourceTree](https://www.sourcetreeapp.com/), or even through the Visual Studio Code IDE.
+These days you do not have to be a `git` terminal master in order to get going with a `git`
+source controlled project. Depending on your preferences, there are many visual UI-based `git`
+clients such as [GitHub Desktop](https://desktop.github.com/),
+[SourceTree](https://www.sourcetreeapp.com/), or even through the Visual Studio Code IDE.
 
+:::
 
 1. Create a new `git` branch from the `main` branch
-    - `git checkout main`
-    - `git pull`
-    - `git checkout -b <YOUR NEW GIT BRANCH NAME>`
+   - `git checkout main`
+   - `git pull`
+   - `git checkout -b <YOUR NEW GIT BRANCH NAME>`
 2. Update your virtual environment
-    - `pipenv sync --three --dev`
+   - `pipenv sync --three --dev`
 3. Activate/Enter the virtual environment
-    - `pipenv shell`
+   - `pipenv shell`
 4. **Make your changes to the project ...**
 5. Run the changes
-    - `yojenkins` - This works because the current package is marked as editable in `Pipfile`
-    - `python yojenkins/__main__py` - This is effectively what is run when running `yojenkins`
+   - `yojenkins` - This works because the current package is marked as editable in `Pipfile`
+   - `python yojenkins/__main__py` - This is effectively what is run when running `yojenkins`
 6. Stage the changes
-    - `git add .`
+   - `git add .`
 7. Run `pre-commit` (See section below)
-    - `pre-commit run`
+   - `pre-commit run`
 8. Stage and commit the changes
-    - `git commit -m "<YOUR GIT COMMIT MESSAGE>"`
+   - `git commit -m "<YOUR GIT COMMIT MESSAGE>"`
 9. Once all your changes and commits are complete, increment and tag the build version of `yojenkins`
-    - `bumpversion patch`
+   - `bumpversion patch`
 10. Push changes to your development branch
     - `git push origin <YOUR NEW GIT BRANCH NAME>`
 11. On GitHub, open a new pull request into the original repository
-
-
-
-
 
 ## Adding New Dependencies
 
@@ -116,15 +120,14 @@ as follows:
 
 1. Add the dependency to the `Pipfile`
 2. Lock the dependency, updating the `Pipfile.lock`
-    - `pipenv lock --clear`
+   - `pipenv lock --clear`
 3. Update `requirements.txt` with the new dependency and its version
-    - Typically you can search it inside `Pipfile.lock`
+   - Typically you can search it inside `Pipfile.lock`
 
-!!! caution
-    Some dependencies are exclusive to a specific Operating system (ie. Windows).
-    Make sure to specify these appropriately as seen with other dependencies.
-
-
+:::caution
+Some dependencies are exclusive to a specific Operating system (ie. Windows).
+Make sure to specify these appropriately as seen with other dependencies.
+:::
 
 ## Formatting and Linting
 
@@ -150,12 +153,14 @@ You can manually run these checks by running `pre-commit run`, or you can add th
 command to your `.git/hooks/pre-commit` file by running `pre-commit install`. This adding a
 git hook is a good way to make sure your code is formatted and linted before you commit.
 
-!!! note
-    `pre-commit` will only run on files that have been staged. However, if you want to run
-    `pre-commit` on the entire project, you can run `pre-commit run --all-files`
+:::note
+`pre-commit` will only run on files that have been staged. However, if you want to run
+`pre-commit` on the entire project, you can run `pre-commit run --all-files`
+:::
 
-!!! caution "Note"
-    Make sure you have the project's virtual environment activated before running the checks.
+:::caution "Note"
+Make sure you have the project's virtual environment activated before running the checks.
+:::
 
 The workflow for running `pre-commit` checks is typically as follows:
 
@@ -164,8 +169,6 @@ The workflow for running `pre-commit` checks is typically as follows:
 3. Run `pre-commit run`
 4. Stage any changes made by `pre-commit`
 5. Commit the staged changes with `git commit`
-
-
 
 ## Unit Testing
 
@@ -177,8 +180,6 @@ of a [`pytest`](https://docs.pytest.org/) framework.
 
 Adding unit tests to the various functions, classes, methods, and the CLI tool as a whole is
 deeply needed.
-
-
 
 ## Documentation
 
@@ -209,7 +210,6 @@ This directory holds all the files that will be edited and used to generate the 
 `mkdocs.yml` is the configuration file for `mkdocs`. Most content inside this file is
 fairly constant except the `nav` section, which may changes if a new site is added.
 
-
 ### Live Server for Preview
 
 While editing and working with the documentation, you may want to preview the documentation
@@ -222,7 +222,6 @@ In order to start this live server
 2. Inside `docs`, run the following command: `mkdocs serve`
 3. Open a browser and navigate to http://127.0.0.1:8000 to actively view your changes
 
-
 ### Building the Documentation
 
 The documentation is built using `mkdocs`, which will use the `source` directory and
@@ -232,9 +231,10 @@ the `mkdocs.yml` configuration file.
 2. Inside `docs`, run the following command: `mkdocs build`
 3. Watch out for any warnings or errors that may need to be fixed.
 
-!!! note "Note"
-    Currently the documentation is build manually using the `mkdocs` command. However, future plans
-    adding this task to GitHub Actions to automate the build process.
+:::note "Note"
+Currently the documentation is build manually using the `mkdocs` command. However, future plans
+adding this task to GitHub Actions to automate the build process.
+:::
 
 ### Deploying The Documentation to GitHub Pages
 
@@ -250,9 +250,10 @@ Here included are some general suggestions for setting up your VS Code environme
 to operate and contribute on this project. The main reason for including this section is to
 encourage even beginner level developers to hopefully contribute to this project.
 
-!!! note "Note"
-    This entire section is a mare suggestions. Developers can be picky about their tools and
-    everyone tends to have their own ways of doing things
+:::note "Note"
+This entire section is a mare suggestions. Developers can be picky about their tools and
+everyone tends to have their own ways of doing things
+:::
 
 ### Extensions
 
@@ -270,25 +271,26 @@ encourage even beginner level developers to hopefully contribute to this project
 
 ### VS Code Settings
 
-
 #### Changing Settings
 
 VS Code setting can be changed by editing the settings JSON file.
 
-!!! caution "Note"
-    When adding or removing JSON settings, do not forget to add commas and quotes
-    appropriately as all the other settings are formatted in the JSON.
+:::caution "Note"
+When adding or removing JSON settings, do not forget to add commas and quotes
+appropriately as all the other settings are formatted in the JSON.
+:::
 
 - **User Settings**
-    - Settings applied globally to the user
-    - To edit: `Ctrl + Shift + P` type: `Preferences: Open Settings (JSON)`
+  - Settings applied globally to the user
+  - To edit: `Ctrl + Shift + P` type: `Preferences: Open Settings (JSON)`
 - **Workspace Settings**
-    - Settings applied for a current workspace or project
-    - To edit: `Ctrl + Shift + P` type: `Preferences: Open Workspace Settings (JSON)`
+  - Settings applied for a current workspace or project
+  - To edit: `Ctrl + Shift + P` type: `Preferences: Open Workspace Settings (JSON)`
 
 #### Settings to Change
 
 - Show `.git` directory in the file tree
+
 ```json
     "files.exclude": {
         "**/.git": false
@@ -296,11 +298,13 @@ VS Code setting can be changed by editing the settings JSON file.
 ```
 
 - Increase terminal scroll back history
+
 ```json
     "terminal.integrated.scrollback": 5000,
 ```
 
 - Increase the visibility of scroll bars
+
 ```json
     "editor.scrollbar.verticalScrollbarSize": 30,
     "editor.scrollbar.horizontal": "visible",
@@ -308,10 +312,10 @@ VS Code setting can be changed by editing the settings JSON file.
 ```
 
 - Add a Vertical Line at Line Length / Column Position
+
 ```json
     "editor.rulers": [100],
 ```
-
 
 ## Contributors
 

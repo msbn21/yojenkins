@@ -1,11 +1,20 @@
+---
+title: "Scripting Examples"
+metaTitle: "Scripting Examples"
+metaDescription: "Scripting Examples"
+sidebar_position: 1
+---
+
 # Scripting Examples
 
-[TOC]
+import TOCInline from '@theme/TOCInline';
 
-!!! note
-    For clarity, all of the following script examples are for simplified use cases.
-    More advanced use cases may require additional logic and error handling.
+<TOCInline toc={toc} />
 
+:::note
+For clarity, all of the following script examples are for simplified use cases.
+More advanced use cases may require additional logic and error handling.
+:::
 
 ## Example 1 - Create job, wait for build, search logs
 
@@ -16,14 +25,15 @@ Here we use a `bash` script with `yojenkins` to do the following:
 - Wait 12 seconds for the build to start and finish
 - Search the build log for the string "Hello beautiful world!"
 
-!!! tip
-    Within the job configuration XML definition, notice how variable usage is escaped with `\`
-    to avoid variable interpretation.
-    Here specifically, using `$VARIABLE` instead of `\$VARIABLE` would cause the variable to be
-    interpreted as a local variable name and not as a string.
-
+:::tip
+Within the job configuration XML definition, notice how variable usage is escaped with `\`
+to avoid variable interpretation.
+Here specifically, using `$VARIABLE` instead of `\$VARIABLE` would cause the variable to be
+interpreted as a local variable name and not as a string.
+:::
 
 **Code**
+
 ```bash
 #!/bin/bash
 
@@ -78,6 +88,7 @@ fi
 ```
 
 **Output**
+
 ```text
 Creating 'Example Job' job in Jenkins root folder ...
 success
@@ -91,7 +102,6 @@ Checking build logs for substring 'Hello world' ...
 Successfully found text 'Hello world'!
 ```
 
-
 ## Example 2 - Create folder, job, wait for build, and delete
 
 The following `bash` script uses `yojenkins` to do the following:
@@ -103,6 +113,7 @@ The following `bash` script uses `yojenkins` to do the following:
 5. Wait for the job to finish
 
 **Code**
+
 ```bash
 #!/bin/bash
 
@@ -152,6 +163,7 @@ yojenkins folder delete "Test Folder"
 ```
 
 **Output**
+
 ```text
 Creating "Test Folder" folder ...
 success
@@ -181,21 +193,21 @@ The following `bash` script uses `yojenkins` to search all jobs on two different
 If it is found, delete it.
 
 !!! note
-    This example assumes that you have two different profiles listed in your
-    `~/.yojenkins/credentials` file with two different Jenkins servers for each profile.
-    We are going to assume the profile names are `jenkins-1` and `jenkins-2`.
-
+This example assumes that you have two different profiles listed in your
+`~/.yojenkins/credentials` file with two different Jenkins servers for each profile.
+We are going to assume the profile names are `jenkins-1` and `jenkins-2`.
 
 **Code**
+
 ```bash
 TODO
 ```
 
 **Output**
+
 ```text
 TODO
 ```
-
 
 ## Example 4 - Creating a User
 
@@ -203,6 +215,7 @@ This `bash` script uses `yojenkins` to set up a new user account and assign them
 the right permissions.
 
 **Code**
+
 ```bash
 #!/bin/bash
 
@@ -226,6 +239,7 @@ yojenkins account permission --action add --permission-id $joined_permission_lis
 ```
 
 **Output**
+
 ```text
 Creating new user 'example_user_1' ...
 success
@@ -234,13 +248,13 @@ Adding the following user permissions: hudson.model.Item.CREATE,hudson.model.Ite
 success
 ```
 
-
 ## Example 5 - Creating a Credential
 
 This `bash` script uses `yojenkins` to create a new user/passoword credential. It generates a
 configuration file template, assigns template variables, and then creates the new credential.
 
 **Code**
+
 ```bash
 #!/bin/bash
 
@@ -267,6 +281,7 @@ echo "Successfully created credential '$CRED_ID'"
 ```
 
 **Output**
+
 ```text
 Successfully created credential 'area-51-access'
 ```

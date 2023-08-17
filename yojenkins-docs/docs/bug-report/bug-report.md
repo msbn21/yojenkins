@@ -1,6 +1,11 @@
+---
+title: "Bug Report"
+metaTitle: "Bug Report"
+metaDescription: "Bug Report"
+sidebar_position: 1
+---
+
 # Bug Report
-
-
 
 As with any other software, issues do come up during various usage scenarios
 that may not be accounted for during development and testing.
@@ -10,7 +15,6 @@ Please report bugs and odd behaviors with:
 
 - Online at [GitHub Issues](https://github.com/ismet55555/yojenkins/issues/new?assignees=ismet55555&labels=bug%2Ctriage&template=bug_report.yml&title=%5BBug%5D%3A+)
 - `yojenkins tools bug-report`
-
 
 ## Include `--debug` Output
 
@@ -80,7 +84,7 @@ Possible solutions:
    - Check if the server container or container engine is up and running
 ```
 
-
-!!! danger
-    The `--debug` option is designed such that it will not expose any sensitive information, however
-    please make sure that you censor any shown information that you do not want appear in public!
+:::danger
+The `--debug` option is designed such that it will not expose any sensitive information, however
+please make sure that you censor any shown information that you do not want appear in public!
+:::

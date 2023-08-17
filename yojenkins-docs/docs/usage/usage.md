@@ -1,9 +1,17 @@
-# Usage
-
-[TOC]
-
+---
+title: "Usage"
+metaTitle: "Usage"
+metaDescription: "Usage"
+sidebar_position: 1
 ---
 
+# Usage
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
+
+---
 
 ## CLI Basics
 
@@ -22,9 +30,7 @@ To look up any command and sub-command help documentation, supplement the comman
 For example, `yojenkins auth configure --help`
 
 !!! tip
-    To troubleshoot any issues or to see what `yojenkins` is doing behind the scenes, use the `--debug` option
-
-
+To troubleshoot any issues or to see what `yojenkins` is doing behind the scenes, use the `--debug` option
 
 ## Menu Overview
 
@@ -68,7 +74,6 @@ Commands:
 The sub-menus can be accessed by entering `yojenkins` followed by the sub-menu name.
 For example, `yojenkins server` will display the server sub-menu.
 
-
 ```txt
 ❯ yojenkins server --help
 
@@ -98,7 +103,7 @@ sub-menu command name. For example, `yojenkins server browser` will open the Jen
 home page in the browser.
 
 !!! note
-    Some commands may be greyed out. These commands are not yet implemented.
+Some commands may be greyed out. These commands are not yet implemented.
 
 Of course you can view the help menu for the sub-menu's commands by adding `--help`.
 For example, `yojenkins server browser --help` will display the help menu for the `browser`
@@ -115,8 +120,6 @@ Options:
   --profile TEXT  Authentication profile for command
   --help          Show this message and exit.
 ```
-
-
 
 ## Authentication
 
@@ -141,8 +144,8 @@ file. The `credentials` file is a TOML file that contains a list of authenticati
 Remember that the `~` is a shorthand for the user's home directory.
 
 !!! note
-    Authentication profiles work very similar to that of AWS CLI, storing credentials locally inside
-    the `~/.aws/credentials` file.
+Authentication profiles work very similar to that of AWS CLI, storing credentials locally inside
+the `~/.aws/credentials` file.
 
 The `~/.yojenkins` directory and the `credentials` file can be manually created, however, `yojenkins`
 will create these files for you if they do not exist.
@@ -172,21 +175,21 @@ The profile sections are as follows:
 - `jenkins_server_url`: The full URL of the Jenkins server's home page.
 - `username`: The username of the Jenkins user account.
 - `api_token`: The API token of the Jenkins user account. This can be fetched through the Jenkins
-server UI, or through `yojenkins`. If this has no value assigned to it, you will be prompted to
-enter your password or API token at each command.
+  server UI, or through `yojenkins`. If this has no value assigned to it, you will be prompted to
+  enter your password or API token at each command.
 - `active`: Whether the profile can be used or not. This can be useful if you want to temporarily disable
-a profile and ensure that you don't accidentally use it.
+  a profile and ensure that you don't accidentally use it.
 
 !!! caution
-    The `api_token` can be the account password, however it is **highly recommended** that you use
-    an API token. You do not want to store a Jenkins account password in plain text.
+The `api_token` can be the account password, however it is **highly recommended** that you use
+an API token. You do not want to store a Jenkins account password in plain text.
 
 ### Configuring a Profile
 
 To use an authentication profile you need to first create a profile. For example, to create a profile
 for your local development server, you can do one of the following two methods.
 
-#### Run `yojenkins auth configure` *(Recommended)*
+#### Run `yojenkins auth configure` _(Recommended)_
 
 Running this command will prompt you for the required information, The prompt will look something
 like the following:
@@ -210,9 +213,8 @@ Successfully configured credentials file
 You can leave the API token blank since you can use `yojenkins` to add the API token later.
 
 !!! caution
-    The profile name is optional because if you do not enter anything for this item, the profile
-    will be named `default` and overwrite any existing `default` profile with the same name.
-
+The profile name is optional because if you do not enter anything for this item, the profile
+will be named `default` and overwrite any existing `default` profile with the same name.
 
 #### Manually edit the `~/.yojenkins/credentials` file directly
 
@@ -232,7 +234,6 @@ temporarily disable a profile, you can set the `active` field to `false`.
 
 You can leave the API token blank since you can use `yojenkins` to add the API token later.
 
-
 #### Using a JSON file
 
 If you need to configure profiles without terminal prompts or manually adding tokens to the
@@ -245,18 +246,18 @@ The following is an example of the JSON file used to set up two authentication p
 
 ```json
 {
-    "server_1": {
-        "active": true,
-        "api_token": "11fb9cb61d34edfe73f82763cf8879c79a",
-        "jenkins_server_url": "https://server_1.jenkins.com",
-        "username": "my_user_id_1"
-    },
-    "server_2": {
-        "active": true,
-        "api_token": "48fb9cb61d34edfe73f82763cf8879u79y",
-        "jenkins_server_url": "https://server_2.jenkins.com",
-        "username": "my_user_id_2"
-    }
+  "server_1": {
+    "active": true,
+    "api_token": "11fb9cb61d34edfe73f82763cf8879c79a",
+    "jenkins_server_url": "https://server_1.jenkins.com",
+    "username": "my_user_id_1"
+  },
+  "server_2": {
+    "active": true,
+    "api_token": "48fb9cb61d34edfe73f82763cf8879u79y",
+    "jenkins_server_url": "https://server_2.jenkins.com",
+    "username": "my_user_id_2"
+  }
 }
 ```
 
@@ -292,7 +293,6 @@ MY_CREDS='{"jenkins_server_url": "https://my-server.com", "username": "user1", "
 yojenkins server info --profile $MY_CREDS
 ```
 
-
 ### Providing or Overriding API Token
 
 `yojenkins` allows you to override or seperataly provide the API token for the targeted Jenkins
@@ -303,10 +303,6 @@ within a secrets manager.
 ```txt
 yojenkins server info --token 48fb9cb61d34edfe73f82763cf8879u79y
 ```
-
-
-
-
 
 ### Requesting and Storing API Tokens
 
@@ -331,6 +327,7 @@ More conveniently, you can generate an API token using the information stored in
 profile and subsequently store the new API token inside an existing authentication profile.
 The following command will request a new API token from the server and store it within the
 `default` under the `api_token` key.
+
 ```txt
 ❯ yojenkins auth token --profile default
 
@@ -339,9 +336,8 @@ Enter "admin" PASSWORD:
 success
 ```
 
-
 !!! tip
-    You can also manually fetch the API token from the Jenkins UI:
+You can also manually fetch the API token from the Jenkins UI:
 
     1. Click on your username in the top right corner of the Jenkins UI
     2. Click on the *"Configure"* button in the menu on the right
@@ -349,25 +345,20 @@ success
     3. Copy the generated API token and paste it into the `api_token` field
     in the `~/.yojenkins/credentials` file
 
-
-
-
 ### Order of Precedence Specifying Profiles
 
 Each time `yojenkins` is run, it will look for a way to determine which authentication profile to use.
 The order of precedence of looking for a profile specifier is as follows:
 
 1. `--profile` command argument
-    - The `--profile` command argument specifies the profile name, the profile specified by the argument will be used.
-    - *Example:* `yojenkins server info --profile my-profile`
+   - The `--profile` command argument specifies the profile name, the profile specified by the argument will be used.
+   - _Example:_ `yojenkins server info --profile my-profile`
 2. Environment variable `YOJENKINS_PROFILE`
-    - *Example:* `export YOJENKINS_PROFILE=my-profile`
+   - _Example:_ `export YOJENKINS_PROFILE=my-profile`
 3. "default" profile in the `~/.yojenkins/credentials` file
 4. First active profile in the `~/.yojenkins/credentials` file
 
 If none of the above are satisfied, `yojenkins` will prompt for Jenkins server credentials.
-
-
 
 ## Output Formatting
 
@@ -387,12 +378,14 @@ Any output with any format can be supplemented with `--pretty` to make the outpu
 Here are some examples of how different output formats looks like using the `yojenkins account list` command:
 
 **Default**
+
 ```text
 ❯ yojenkins account list
 [{"id": "admin", "me": true, "fullName": "admin", "description": "", "absoluteUrl": "http://localhost:8080/user/admin", "userFolder": {"directory": true, "file": false, "freeSpace": 18083065856, "invalid": false, "canonicalPath": "/var/jenkins_home/users/admin_6787401061636913615", "usableSpace": 16512360448, "hidden": false, "totalSpace": 30525820928, "path": "/var/jenkins_home/users/admin_6787401061636913615", "name": "admin_6787401061636913615", "prefixLength": 1, "absolute": true, "absolutePath": "/var/jenkins_home/users/admin_6787401061636913615", "parent": "/var/jenkins_home/users"}, "isAdmin": true, "isManager": true, "isSystemRead": true, "canRead": true, "canWrite": true, "canUpdate": true, "canDelete": true, "canConfigure": true, "authorities": [], "lastGrantedAuthoritiesChanged": "Mon Nov 15 14:19:08 UTC 2021"}]
 ```
 
 **Pretty Formatting**
+
 ```text
 ❯ yojenkins account list --pretty
 
@@ -415,6 +408,7 @@ Here are some examples of how different output formats looks like using the `yoj
 ```
 
 **YAML**
+
 ```text
 ❯ yojenkins account list --yaml
 
@@ -432,6 +426,7 @@ Here are some examples of how different output formats looks like using the `yoj
 ```
 
 **TOML**
+
 ```text
 ❯ yojenkins account list --toml
 
@@ -452,6 +447,7 @@ parent = "/var/jenkins_home/users"
 ```
 
 **XML**
+
 ```text
 ❯ yojenkins account list --xml --pretty
 
@@ -477,7 +473,6 @@ parent = "/var/jenkins_home/users"
 </None>
 ```
 
-
 ## Live Monitoring
 
 Sometimes you would like to keep a watch on a Job, monitoring the status of its builds, or a
@@ -491,7 +486,7 @@ the status of all past and current build of the job.
 
 In addition, the job monitors offers some job actions that can be activated via shortcut keys.
 
-*TODO: Complete this section*
+_TODO: Complete this section_
 
 ```bash
 yojenkins job monitor <JOB>
@@ -504,13 +499,11 @@ will display some basic information about the build, including build status.
 
 In addition, the build monitor offers some build actions that can be activated via shortcut keys.
 
-*TODO: Complete this section*
+_TODO: Complete this section_
 
 ```bash
 yojenkins build monitor <JOB> --latest --sound
 ```
-
-
 
 ## Tools
 
@@ -545,7 +538,6 @@ Here is a sample output of the `yojenkins tools history` command:
 
 Clearing the entire `yojenkins` history file, run `yojenkins tools history --clear`.
 
-
 ### Generic REST Server Requests
 
 Sometimes `yojenkins` does not support a specific request to the server. For example, if there is
@@ -574,8 +566,6 @@ This command supports the following options:
 - `--raw` - If set, the response will be printed as raw text. The response will not be parsed as JSON.
 - `--clean-html` - If set, the response will be cleaned of HTML tags. This is useful if the response is in HTML format and you only want the content.
 
-
-
 ### Run Groovy Script on Server
 
 Often times you want to run a Groovy script on the Jenkins server. The `yojenkins tools run-script`
@@ -586,15 +576,15 @@ This may be useful for Jenkins administrative tasks or simply running Groovy tes
 You can specify the Groovy script by using one of the following options:
 
 1. `--text <SCRIPT TEXT>`
-    - The Groovy script is specified as a string within the command.
-    - *Example:* `yojenkins tools run-script --text 'println("Hello fun world")'`
+   - The Groovy script is specified as a string within the command.
+   - _Example:_ `yojenkins tools run-script --text 'println("Hello fun world")'`
 2. `--file <SCRIPT FILE PATH>`
-    - The Groovy script is specified as a file path.
-    - *Example:* `yojenkins tools run-script --file /path/to/script.groovy`
+   - The Groovy script is specified as a file path.
+   - _Example:_ `yojenkins tools run-script --file /path/to/script.groovy`
 
 !!! attention
-    In order to run a Groovy script, you must have the appropriate permissions on the Jenkins server
-    for the user account you are using.
+In order to run a Groovy script, you must have the appropriate permissions on the Jenkins server
+for the user account you are using.
 
 ### Setup Jenkins Shared Library
 
@@ -605,9 +595,9 @@ it into each pipeline. [Shared libraries](https://www.jenkins.io/doc/book/pipeli
 are a way to share code between projects and pipelines.
 
 !!! danger
-    Jenkins sharable libraries available to any Pipeline jobs running on this system. These libraries will
-    be fully trusted, meaning they run code without “sandbox” restrictions and may use @Grab.
-    So be careful what code is being added to a Jenkins shared library.
+Jenkins sharable libraries available to any Pipeline jobs running on this system. These libraries will
+be fully trusted, meaning they run code without “sandbox” restrictions and may use @Grab.
+So be careful what code is being added to a Jenkins shared library.
 
 `yojenkins` provides a command to setup a shared library using the following command:
 
@@ -619,9 +609,7 @@ This command provides options to specify shared library setup options such as th
 in which the shared library is stored, git branch name, and if the shared library is loaded
 implicitly.
 
-*As of now, the only git repository that is supported by `yojenkins` is GitHub.*
-
-
+_As of now, the only git repository that is supported by `yojenkins` is GitHub._
 
 ## Local Jenkins Server Setup Using Docker
 
@@ -629,13 +617,12 @@ implicitly.
 This containerized server is set up and ready to go to use to test `yojenkins`.
 
 !!! warning "Warning"
-    The locally containerized server set up using `server-deploy` is for development, training,
-    demonstration, or testing purposes only. **Do not use this server for any production environments.**
+The locally containerized server set up using `server-deploy` is for development, training,
+demonstration, or testing purposes only. **Do not use this server for any production environments.**
 
 !!! note "Note"
-    For the locally containerized server to work, you must have Docker installed and running.
-    See [Docker installation guide](docker_install.md) on how to install Docker.
-
+For the locally containerized server to work, you must have Docker installed and running.
+See [Docker installation guide](docker_install.md) on how to install Docker.
 
 ### Deploying the Local Jenkins Server
 
@@ -656,14 +643,13 @@ options in order to change any defaults.
 Here are some examples of how to use the `server-deploy` command:
 
 - Use the Blue Ocean Jenkins Docker base image
-    - `yojenkins server server-deploy --image-base jenkinsci/blueocean`
+  - `yojenkins server server-deploy --image-base jenkinsci/blueocean`
 - Change the default username and password
-    - `yojenkins server server-deploy --admin-user ismet --password Abc123`
+  - `yojenkins server server-deploy --admin-user ismet --password Abc123`
 - Use a different Jenkins configuration as code file
-    - `yojenkins server server-deploy --config-file /path/to/config_as_code.yaml`
+  - `yojenkins server server-deploy --config-file /path/to/config_as_code.yaml`
 - Use a custom list of plugins to create a Jenkins server
-    - `yojenkins server server-deploy --plugins-file /path/to/plugins.txt`
-
+  - `yojenkins server server-deploy --plugins-file /path/to/plugins.txt`
 
 ### Tearing Down the Local Jenkins Server
 

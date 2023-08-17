@@ -1,13 +1,21 @@
+---
+title: "Support This Project!"
+metaTitle: "Support This Project!"
+metaDescription: "Support This Project!"
+sidebar_position: 1
+---
+
 # Support this Project!
 
-[TOC]
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
 
 ---
 
-!!! tip "Big Thank You"
-    **Any support for this project is much appreciated!**
-
-
+:::tip "Big Thank You"
+**Any support for this project is much appreciated!**
+:::
 
 ## Financial Support
 
@@ -16,19 +24,17 @@ keep pushing code into the public view. Although these sponsorships probably wil
 ton of money or let me quit my day job any time soon, it will give me the additional
 motivation and drive to contribute to the open source community.
 
-
-
 ### How Can I Sponsor?
 
 The following methods are available to financially support this project:
 
 1. [**GitHub Sponsor**](https://github.com/sponsors/ismet55555?frequency=recurring&sponsor=ismet55555)
-    - GitHub offers a way to support with a **monthly or a one-time sponsorship**.
-    - You can become a sponsor with recurruing donations or you can simply become a sponsor with a one-time donation.
+   - GitHub offers a way to support with a **monthly or a one-time sponsorship**.
+   - You can become a sponsor with recurruing donations or you can simply become a sponsor with a one-time donation.
 2. [**Buy Me Coffee**](https://buymeacoffee.com/ismet55555)
-    - This is a popular way to support developers, creaters, and maintainers of projects
-    - Essentially, it is a quick and subdle way to support the project by "buying me a coffee"
-    with a **one-time donation**.
+   - This is a popular way to support developers, creaters, and maintainers of projects
+   - Essentially, it is a quick and subdle way to support the project by "buying me a coffee"
+     with a **one-time donation**.
 
 ### What Do I Get Back?
 
@@ -36,23 +42,19 @@ Depending on the size of the donation, you or your company are able to get the f
 these tiers are the same as the tiers on the [GitHub Sponsorship Page](https://github.com/sponsors/ismet55555?frequency=recurring&sponsor=ismet55555).
 The donations on [Buy Me Coffee](https://buymeacoffee.com/ismet55555) are one-time relatively lower payments
 
-
 ### What Will Happen to My Money?
 
 That would depend on how much money gets sponsored overall.
 
 - **Overall sponsorship under $100/month:** I will probably buy personal items that
-makes development more comfortable. This includes things like tea, various snacks, hardware upgrades,
-hosting costs, etc.
+  makes development more comfortable. This includes things like tea, various snacks, hardware upgrades,
+  hosting costs, etc.
 
 - **Overall sponsorship over $100/month:** I will pay it forward and sponsor someone
-else's project that I believe is worth sponsoring.
+  else's project that I believe is worth sponsoring.
 
 - **Overall sponsorship over $500/month:** ... hmm...well, I'm not really sure this project will get there.
-But if it does, I will have to re-think and update my sponsorship strategy.
-
-
-
+  But if it does, I will have to re-think and update my sponsorship strategy.
 
 ## Marketing Support
 

@@ -1,3 +1,10 @@
+---
+title: "Feature Request"
+metaTitle: "Feature Request"
+metaDescription: "Feature Request"
+sidebar_position: 1
+---
+
 # Feature Request
 
 This is a very young project, and we are always looking for new features
