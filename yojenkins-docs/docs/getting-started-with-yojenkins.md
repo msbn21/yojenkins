@@ -29,7 +29,7 @@ With `yojenkins` you can manage:
 
 See the CLI command outline for `yojenkins`: [CLI Outline](cli_outline.md)
 
-:::caution "Remember"
+:::caution Remember
 This project is in **alpha** release phase. Please report any issues, odd behavior, or suggestions.
 Read more about the [release cycle](https://en.wikipedia.org/wiki/Software_release_life_cycle).
 See [Bug Reports](bug_report.md) and [Feature Requests](feature_request.md)
@@ -50,7 +50,9 @@ The following is a quick start guide to get going with the `yojenkins` command l
 This guide assumes that `yojenkins` is installed and available on your system.
 
 1. **(Optional)** Start up a containerized local Jenkins server using Docker
-   - `yojenkins server server-deploy`
+   ```bash
+   yojenkins server server-deploy
+   ```
 2. Configure your first profile. Profiles are stored in the home directory in `.yojenkins`
    - `yojenkins auth configure`
 3. Generate a Jenkins server API token and add it to your first profile
